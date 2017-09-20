@@ -44,15 +44,15 @@ function transformFile(data) {
 }
 
 function createFolders(rootDir, fileDir) {
-  if(!test('-e', outputDirectory)) {
-    mkdir(outputDirectory)
+  if(!test('-e', rootDir)) {
+    mkdir(rootDir)
   }
 
-  if (test('-e', fileSaveDir)) {
-    rm('-rf', fileSaveDir)
+  if (test('-e', fileDir)) {
+    rm('-rf', fileDir)
   }
 
-  mkdir(fileSaveDir)
+  mkdir(fileDir)
 }
 
 function createConfig(fileName) {
@@ -86,6 +86,7 @@ if(!test('-e', path.resolve(fileName))) {
 }
 
 config = createConfig(fileName)
+createFolders(config.rootDir, config.saveDir)
 
 console.log('Writing output to ' + config.saveDir)
 
