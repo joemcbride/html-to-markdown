@@ -1,0 +1,14 @@
+{
+  "name": "caliburn-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Joe McBride <joe@uicraftsman.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.8",
+    "to-markdown": "^3.1.0"
+  }
+}
