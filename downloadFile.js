@@ -8,10 +8,10 @@ module.exports = (url, saveFile) => {
     var request = http.get(url, function(response) {
       response.pipe(file)
       file.on('finish', function() {
-        file.close(resolve)  // close() is async, call cb after close completes.
+        file.close(resolve)
       });
-    }).on('error', function(err) { // Handle errors
-      fs.unlink(dest) // Delete the file async. (But we don't check the result)
+    }).on('error', function(err) {
+      fs.unlink(saveFile)
       reject(err)
     });
   })
